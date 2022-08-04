@@ -18,8 +18,8 @@ export default function Home(props) {
         <h1 className={styles.titre}>Vocabulaires de base</h1>
         <table className={styles.tableau}>
           <tbody>
-            {props.array.map(el => (
-              <tr>
+            {props.array.map((el, index) => (
+              <tr key={index}>
                 <td>{el.en}</td>
                 <td>{el.fr}</td>
               </tr>
@@ -33,7 +33,21 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   const data = await import(`/data/vocabulary.json`);
+  //const data = await import('/');
   const array = data.vocabulary;
+
+  /* if (array.length === 0) {
+    return {
+      notFound: true
+    }
+  } */
+  if (!array) {
+    return {
+      redirect: {
+        destination: "/isr"
+      }
+    }
+  }
 
   return {
     props: {array}
