@@ -11,7 +11,8 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1>Hello Next !</h1>        
+      <h1>Hello Next !</h1>
+      <button className="btn btn-primary">Click</button> 
     </div>
   )
 }
