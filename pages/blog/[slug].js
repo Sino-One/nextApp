@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
 
@@ -15,9 +16,16 @@ export default function article() {
   }
 
   return (
+    <>
+    <Head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{router.query.slug}</title>
+    </Head>
     <div>
       <h1>{router.query.slug}</h1>
       <button onClick={pushFunction}>Push to Home</button>
     </div>
+    </>
   )
 }
