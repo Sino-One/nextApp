@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
 
-export default function article() {
+export default function Article() {
 
   const router = useRouter();
 
@@ -18,7 +18,6 @@ export default function article() {
   return (
     <>
     <Head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{router.query.slug}</title>
     </Head>

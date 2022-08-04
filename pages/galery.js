@@ -13,18 +13,21 @@ export default function galery() {
     src={img1}
     width="16"
     height="9"
+    alt='img1'
     />
     <Image
     layout='responsive' placeholder='blur'
     src={img2}
     width="3857"
     height="2571"
+    alt='img2'
     />
     <Image
     layout='responsive' placeholder='blur'
     src={img3}
     width="4725"
     height="3150"
+    alt='img3'
     />
       {/* <img src="/assets/img1.jpg" alt="" />
       <img src="/assets/img2.jpg" alt="" />
