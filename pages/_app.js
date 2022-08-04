@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import React from "react";
+import Container from "../components/Container/Container";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

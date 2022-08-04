@@ -11,9 +11,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1>Hello Next !</h1>
-      <Navbar/>
-        
+      <h1>Hello Next !</h1>        
     </div>
   )
 }
