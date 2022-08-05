@@ -9,8 +9,8 @@ export default function index(props) {
     <ul className="container list-group">
         {props.array.map((item, index) => (
             <li className="list-group-item" key={index}>
-                <Link href={'/listes/' + Object.keys(item)[0]}>
-                {Object.keys(item)[0]}
+                <Link href={`/listes/${item.name}`}>
+                {item.name}
                 </Link>
                 </li>
                     ))}
