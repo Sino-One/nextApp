@@ -8,6 +8,10 @@ export default function Liste(props) {
     const router = useRouter();
     console.log(router);
 
+    if (!props.listeEnCours) {
+      return <h1 className='container'> ... </h1>
+    }
+
   return (
     <div className='container'>
       <h1 className={styles.titre}>{router.query.liste.toString()[0].toUpperCase() + router.query.liste.slice(1)}</h1>
@@ -48,12 +52,11 @@ export async function getStaticPaths() {
   }))
 
   return {
-    /* paths: [
+     paths: [
       {params: {liste: "words"}},
-      {params: {liste: "adjectives"}},
       {params: {liste: "verbs"}},
-    ], */
-    paths,
-    fallback: false // 404 on unknown path
+    ], 
+    //paths,
+    fallback: true // 404 on unknown path
   }
 }
