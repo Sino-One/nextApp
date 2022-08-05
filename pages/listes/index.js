@@ -20,7 +20,7 @@ export default function index(props) {
 }
 
 export async function getStaticProps() {
-    const data = await import(`/data/pathsvoc.json`);
+    const data = await import(`/data/listes.json`);
     const array = data.englishList;
 
     return {

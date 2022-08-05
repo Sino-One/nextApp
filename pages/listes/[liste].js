@@ -32,7 +32,7 @@ export default function Liste(props) {
 
 export async function getStaticProps(context) {
   const slug = context.params.liste;
-  const data = await import('/data/pathsvoc.json');
+  const data = await import('/data/listes.json');
 
   const listeEnCours = data.englishList.find(list => list.name === slug);
 
@@ -45,7 +45,7 @@ export async function getStaticProps(context) {
 
 
 export async function getStaticPaths() {
-  const data = await import(`/data/pathsvoc.json`)
+  const data = await import(`/data/listes.json`)
 
   const paths = data.englishList.map(item => ({
     params: {liste: item.name}

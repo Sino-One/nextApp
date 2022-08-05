@@ -1,13 +1,29 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home(props) {
 
+  const [state, setState] = useState(false);
+
+  useEffect(() => {
+    newWord()
+  }, [])
+
   const id = "article";
-  console.log(props)
+  const newWord = () => {
+    fetch('/api/vocapi').then(response => response.json()).then(data => setState(data));
+  }
+  console.log(state);
+
+  let randomWord;
+  if (state) {
+    const array = state.englishList[0].data;
+    randomWord = array[Math.floor(Math.random() * array.length)].en;
+    console.log(randomWord);
+  }
 
   return (
     <>
@@ -15,8 +31,8 @@ export default function Home(props) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
     </Head><div className={styles.container}>
-        <h1 className={styles.titre}>Vocabulaires de base</h1>
-        <table className={styles.tableau}>
+        <h1 className={styles.titre}>Mot au hasard</h1>
+        {/* <table className={styles.tableau}>
           <tbody>
             {props.array.map((el, index) => (
               <tr key={index}>
@@ -25,7 +41,9 @@ export default function Home(props) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
+        <button onClick={newWord} className="btn btn-primary">get Random WORD</button>
+        <h2>{randomWord}</h2>
       </div>
       </>
   )
