@@ -7,9 +7,9 @@ export default function css() {
       <div className={styles.carte}>
         <img src="https://source.unsplash.com/random/500×500" alt="random image" className={styles.monImg}/>
         <div className={styles.cardFooter}>
-            <h3 className={styles.footerTitle}>Titre de pied de carte</h3>
+            <h3 className={styles.footerTitle}>Titre de la carte</h3>
+            <p className={styles.footerContent}>Contenu du pied de carte balbalblakd fhhgt fef </p>
             </div>
-            <p className={styles.footerContent}>Contenu du pied de page balbalblakd fhhgt fef </p>
         </div>
     </>
   )

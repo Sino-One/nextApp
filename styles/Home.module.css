@@ -31,6 +31,7 @@
   background: #333;
   border: 2px solid #3f33;
   border-radius: 5px;
+  position: relative;
 }
 
 .monImg {
@@ -47,5 +48,8 @@
 }
 
 .cardFooter {
-
+  width: 100%;
+  position: relative;
+  background-color: rgba(124,124,124,0.8);
+  padding: 15px;
 }
