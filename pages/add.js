@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-export default function add() {
+export default function Add() {
 
     const enWord = useRef()
     const frWord = useRef()
@@ -22,7 +22,7 @@ export default function add() {
         }).then(res => res.json()).then(data => {
             console.log(data);
         })
-        
+
         enWord.current.value = "";
         frWord.current.value = "";
 
